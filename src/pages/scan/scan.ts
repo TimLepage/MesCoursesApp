@@ -46,8 +46,7 @@ export class ScanPage {
       + currentdate.getMinutes() + ':'
       + currentdate.getSeconds() + '\"}';
     this.cp = JSON.parse(text);
-    alert(JSON.stringify(this.cp));
-    this.subscribeToSaveResponse(this.http.post<ICheckPoint>('http://192.168.43.102:9000/api/check-points', this.cp, { observe: 'response' }));
+    this.subscribeToSaveResponse(this.http.post<ICheckPoint>('http://mes-courses-2018.herokuapp.com/api/check-points', this.cp, { observe: 'response' })); // http://192.168.43.102:9000/api/check-points
   }
 
   scanCode() {
