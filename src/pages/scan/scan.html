@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Scanner un participant
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button full icon-left (click)="scanCode()" color="secondary">
+    <ion-icon name="qr-scanner"></ion-icon>Scan Code
+  </button>
+
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      <p>Result from Scan: {{ scannedCode }}</p>
+      <p>Key : {{ readableKey }}</p>
+      <p>IV : {{ readableIV }} </p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

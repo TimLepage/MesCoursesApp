@@ -1,0 +1,7 @@
+{
+  "name": "MesCourses",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
