@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
 export interface ICheckPoint {
   id?: number;
@@ -23,15 +23,15 @@ export class ScanPage {
   }
 
   private subscribeToSaveResponse(result: Observable<HttpResponse<ICheckPoint>>) {
-      result.subscribe((res: HttpResponse<ICheckPoint>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    result.subscribe((res: HttpResponse<ICheckPoint>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
   }
 
   private onSaveSuccess() {
-      this.isSaving = false;
+    this.isSaving = false;
   }
 
   private onSaveError() {
-      this.isSaving = false;
+    if (this.isSaving) { this.isSaving = false; }
   }
 
   sendData(str: String) {
